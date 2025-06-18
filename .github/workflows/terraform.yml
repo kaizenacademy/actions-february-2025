@@ -48,6 +48,14 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
 
+    - name: Create tfvars file
+      run: |
+        cat <<EOF > terraform.tfvars
+        ami_id = "${{ inputs.ami_id }}"
+        instance_type = "${{ inputs.instance_type }}"
+        region = "${{ inputs.region }}"
+        EOF
+
     - name: Terraform Init
       run: terraform init
 
