@@ -12,20 +12,6 @@ on:
           - apply
           - destroy
 
-      region:
-        description: 'Provide region'
-        required: true
-        default: 'us-east-1'
-
-      ami_id:
-        description: 'Enter ami id'
-        required: true
-
-      instance_type:
-        description: 'Provide instance type'
-        required: true
-        default: 't2.micro'
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
